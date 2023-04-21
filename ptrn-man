@@ -1,0 +1,19 @@
+.\" Manpage for PTRN
+.TH man 1 "21 April 2023" "0.1" "ptrn man page"
+.SH NAME 
+PTRN \- Pattern prinT and Run in command liNe
+.SH SYNOPSIS
+ptrn [-h|-c] [pattern] [style] [no-of-lines]
+.SH DESCRIPTION
+Prints patterns and their algorithms.
+-h \- prints in hollow mode
+-c \- prints in colour mode
+[pattern] \-pattern name 
+[style] \-pattern style
+[no-of-lines] \-how many lines long the pattern should be.
+.SH EXAMPLES
+.SH SEE ALSO
+.SH BUGS
+.SH AUTHOR
+  Kushal Saha
+.SH COPYRIGHT
