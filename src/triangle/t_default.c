@@ -2,5 +2,5 @@
 #include "triangle.h"
 
 void t_default(int line){
-  printf("%d",line);
+  printf("\nt_default function called, line = %d",line);
 }
