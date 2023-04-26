@@ -5,9 +5,9 @@ COPT=-Wall #replace with Compiler based Options
 #Target And Dependencies
 TRI_DIR=src/triangle
 TRI_OBJ=obj/triangle.o obj/t_default.o obj/t_vertical.o
-TEST_DIR=path_here 
+TEST_DIR=src/triangle
 #Name of the shape directory (ex- src/triangle)
-TEST_SRC=source_file_here 
+TEST_SRC=t_default.c
 #Name of the source c file of the function (ex- t_vertical.c)
 
 # Compile every .c file to object file separately and put the objecct file in the obj directory:
@@ -37,5 +37,5 @@ obj/t_vertical.o: $(TRI_DIR)/t_vertical.c
 #Clean all object and executables files
 clean:
 	rm -f obj/*.o ptrn
-test:
-	$(CC) $(COPT) $(TEST_DIR)/$(TEST_SRC) -o test && ./test
+test: test.c $(TEST_DIR)/$(TEST_SRC)
+	$(CC) $(COPT) $^ -o test && ./test

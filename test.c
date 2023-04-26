@@ -4,5 +4,6 @@ int main(void){
   int line;
   printf("\nEnter no of lines:");
   scanf("%d",&line);
-  t_vertical(line); //replace the function with the test function
+  t_default(line); //replace the function with the test function
+  return 0;
 }
