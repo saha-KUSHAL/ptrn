@@ -3,6 +3,8 @@ CC=gcc #replace with your choice of Compiler
 COPT=-Wall #replace with Compiler based Options
 
 #Target And Dependencies
+SYS_DIR=src/system
+SYS_OBJ=obj/options.o obj/shape.o obj/style.o
 TRI_DIR=src/triangle
 TRI_OBJ=obj/triangle.o obj/t_default.o obj/t_vertical.o
 TEST_DIR=src/triangle
@@ -18,7 +20,7 @@ Binary: ptrn
 
 #Link object files into executables
 # $^ and $@ refers to all Dependencies and Target repectively
-ptrn: obj/main.o $(TRI_OBJ)
+ptrn: obj/main.o $(TRI_OBJ) $(SYS_OBJ)
 	$(CC) $(COPT) $^ -o $@
 
 #Compile source files to object codes
@@ -34,6 +36,13 @@ obj/t_default.o: $(TRI_DIR)/t_default.c
 obj/t_vertical.o: $(TRI_DIR)/t_vertical.c
 	$(CC) $(COPT) -c $< -o $@
 
+#System Object files
+obj/options.o : $(SYS_DIR)/options.c
+	$(CC) $(COPT) -c $< -o $@
+obj/shape.o : $(SYS_DIR)/shape.o
+	$(CC) $(COPT) -c $< -o $@
+ob/style.o: $(SYS_DIR)/style.o
+	$(CC) $(COPT) -c $< -o $@
 #Clean all object and executables files
 clean:
 	rm -f obj/*.o ptrn
