@@ -13,7 +13,8 @@ char *options(int argc,char *argv[]){
     else if(strcmp(argv[i],"-c")==0){
       opts[1]='c';
     } else
-      otps[0]='\n';
+      otps[0]='\0';
   }
+  opts[3]='\0';
   return opts;
 }
