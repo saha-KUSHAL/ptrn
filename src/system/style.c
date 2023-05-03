@@ -1,6 +1,9 @@
 #include "system.h"
 #include <string.h>
 #include "argmanager.h"
+/* Same working principle as shape function, but in addition we will not check the
+* position where the shape is found in argv array.
+*/
 char *style(int argc,char *argv[]){
   int i,count =0,pos;
   char temp_style[10];

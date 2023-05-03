@@ -1,6 +1,12 @@
 #include "system.h"
 #include <string.h>
 #include "argmanager.h"
+/*
+* Checking the full argv array and if match is found, then store it in header
+* and mark the matched position in loc_arr array.
+* The count counter checks if there is multiple shapes, in that case  an
+* error will be triggered.
+*/
 char * shape(int argc, char *argv[]){
   int i,count=0;
   char temp_shape[20];
