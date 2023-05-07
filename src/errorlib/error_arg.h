@@ -6,18 +6,18 @@
  * Argument erros
  */
 #define ERROR_NO_ARGUMENT 1
-#define ERROR_FEW_ARGUEMNT 2
+#define ERROR_FEW_ARGUMENT 2
 #define ERROR_MANY_ARGUMENT 3
 /*
  * Shape error
  */
 #define ERROR_NO_SHAPE 4
-#define ERROR_MULTIPLE SHAPE 5
+#define ERROR_MULTIPLE_SHAPE 5
 /*
  * Shape Errors
  */
 #define ERROR_NO_STYLE 6
-#define ERROR_MULTIPLE STYLE 7
+#define ERROR_MULTIPLE_STYLE 7
 /*
  * Options Errors
  */
