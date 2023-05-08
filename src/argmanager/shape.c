@@ -1,13 +1,14 @@
 #include "system.h"
 #include <string.h>
 #include "argmanager.h"
+#include "errorlib/error_arg.h"
 /*
 * Checking the full argv array and if match is found, then store it in header
 * and mark the matched position in loc_arr array.
 * The count counter checks if there is multiple shapes, in that case  an
 * error will be triggered.
 */
-char * shape(int argc, char *argv[]){
+int shape(int argc, char *argv[]){
   int i,count=0;
   char temp_shape[20];
   for(i=1;i<argc;i++){
@@ -28,14 +29,14 @@ char * shape(int argc, char *argv[]){
       count++;
     }
     else
-      return "No Shape";
+      return ERROR_NO_SHAPE;
   }
   if(count >1)
-    return "Too many argument";
+    return ERROR_MULTIPLE_SHAPE;
   else{
     loc_arr[0]=i;
     opt_check=1;
     strcpy(shape,temp_shape);
-    return "Success";
+    return ERROR_SUCESS;
   }
 }

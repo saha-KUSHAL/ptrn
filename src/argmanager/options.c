@@ -1,6 +1,8 @@
 #include "system.h"
 #include <string.h>
-char *options(int argc,char *argv[]){
+#include "error_arg.h"
+
+int options(int argc,char *argv[]){
   int i,pos_h=-1,pos_c=-1;
   /* if there are multiple same options, it will be treated as one.
   if there are multiple distinct options, then it will be stored in a char array
@@ -22,5 +24,5 @@ char *options(int argc,char *argv[]){
   opts[2]='\0';
   loc_arr[2]=pos_c;
   loc_arr[3]=pos_h;
-  return "Success";
+  return ERROR_SUCCESS;
 }

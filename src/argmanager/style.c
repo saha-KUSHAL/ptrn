@@ -4,7 +4,7 @@
 /* Same working principle as shape function, but in addition we will not check the
 * position where the shape is found in argv array.
 */
-char *style(int argc,char *argv[]){
+int style(int argc,char *argv[]){
   int i,count =0,pos;
   char temp_style[10];
   if(opt_check==1){
@@ -22,17 +22,17 @@ char *style(int argc,char *argv[]){
         count++;
       }
      else
-        return "no shape";
+        return ERROR_NO_STYLE;
     }
   }
   if(count >1){
-    return "Too Many Arguments";
     opt_check=0;
+    return ERROR_NO_STYLE;
   }
   else{
     opt_check =1;
     loc_arr[1]=pos;
     strcpy(style,temp_style);
-    return "Success";
+    return ERROR_SUCCESS;
   }
 }
